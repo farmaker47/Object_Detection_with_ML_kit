@@ -1,18 +1,14 @@
 package com.example.objectdetection;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.Camera;
 import androidx.camera.core.CameraSelector;
-import androidx.camera.core.ExperimentalGetImage;
 import androidx.camera.core.ImageAnalysis;
-import androidx.camera.core.ImageProxy;
 import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
-import androidx.lifecycle.LifecycleOwner;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -21,7 +17,6 @@ import android.graphics.Rect;
 import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.util.Log;
 import android.util.Size;
 import android.widget.Toast;
@@ -99,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
             LocalModel localModel =
                     new LocalModel.Builder()
-                            .setAssetFilePath("mobilenet.tflite")
+                            .setAssetFilePath("mobilenet_v1_0.75_192_quantized_1_metadata_1.tflite")
                             .build();
 
             CustomObjectDetectorOptions customObjectDetectorOptions =
